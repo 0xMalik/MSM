@@ -1,0 +1,246 @@
+doctype html
+html.loading(lang='en', data-textdirection='rtl', xmlns='http://www.w3.org/1999/html')
+    head
+        meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
+        meta(name='viewport', content='width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui')
+        title MikroTik Management System
+        link(rel='apple-touch-icon', sizes='60x60', href='../app-assets/images/ico/apple-icon-60.png')
+        link(rel='apple-touch-icon', sizes='76x76', href='../app-assets/images/ico/apple-icon-76.png')
+        link(rel='apple-touch-icon', sizes='120x120', href='../app-assets/images/ico/apple-icon-120.png')
+        link(rel='apple-touch-icon', sizes='152x152', href='../app-assets/images/ico/apple-icon-152.png')
+        link(rel='shortcut icon', type='image/x-icon', href='../app-assets/images/ico/favicon.ico')
+        link(rel='shortcut icon', type='image/png', href='../app-assets/images/ico/favicon-32.png')
+        meta(name='apple-mobile-web-app-capable', content='yes')
+        meta(name='apple-touch-fullscreen', content='yes')
+        meta(name='apple-mobile-web-app-status-bar-style', content='default')
+        // BEGIN VENDOR CSS
+        link(rel='stylesheet', type='text/css', href='../app-assets/css-rtl/bootstrap.css')
+        // font icons
+        link(rel='stylesheet', type='text/css', href='../app-assets/fonts/icomoon.css')
+        link(rel='stylesheet', type='text/css', href='../app-assets/fonts/flag-icon-css/css/flag-icon.min.css')
+        link(rel='stylesheet', type='text/css', href='../app-assets/vendors/css/extensions/pace.css')
+        // END VENDOR CSS
+        // BEGIN ROBUST CSS
+        link(rel='stylesheet', type='text/css', href='../app-assets/css-rtl/bootstrap-extended.css')
+        link(rel='stylesheet', type='text/css', href='../app-assets/css-rtl/app.css')
+        link(rel='stylesheet', type='text/css', href='../app-assets/css-rtl/colors.css')
+        link(rel='stylesheet', type='text/css', href='../app-assets/css-rtl/custom-rtl.css')
+        // END ROBUST CSS
+        // BEGIN Page Level CSS
+        link(rel='stylesheet', type='text/css', href='../app-assets/css-rtl/core/menu/menu-types/vertical-menu.css')
+        link(rel='stylesheet', type='text/css', href='../app-assets/css-rtl/core/menu/menu-types/vertical-overlay-menu.css')
+        link(rel='stylesheet', type='text/css', href='../app-assets/css-rtl/core/colors/palette-gradient.css')
+        // END Page Level CSS
+    body.vertical-layout.vertical-menu.2-columns.fixed-navbar(data-open='click', data-menu='vertical-menu', data-col='2-columns')
+    // navbar-fixed-top
+    nav.header-navbar.navbar.navbar-with-menu.navbar-fixed-top.navbar-semi-dark.navbar-shadow
+        .navbar-wrapper
+            .navbar-header
+                ul.nav.navbar-nav
+                    li.nav-item.mobile-menu.hidden-md-up.float-xs-left
+                        a.nav-link.nav-menu-main.menu-toggle.hidden-xs
+                            i.icon-menu5.font-large-1
+                    li.nav-item
+                        a.navbar-brand.nav-link(href='index')
+                            img.brand-logo(alt='branding logo', src='../../app-assets/images/logo/robust-logo-light.png', data-expand='../../app-assets/images/logo/robust-logo-light.png', data-collapse='../../app-assets/images/logo/robust-logo-small.png')
+                    li.nav-item.hidden-md-up.float-xs-right
+                        a.nav-link.open-navbar-container(data-toggle='collapse', data-target='#navbar-mobile')
+                            i.icon-ellipsis.pe-2x.icon-icon-rotate-right-right
+            .navbar-container.content.container-fluid
+                #navbar-mobile.collapse.navbar-toggleable-sm
+                    ul.nav.navbar-nav
+                        li.nav-item.hidden-sm-down
+                            a.nav-link.nav-menu-main.menu-toggle.hidden-xs
+                                i.icon-menu5
+                        li.nav-item.hidden-sm-down
+                            a.nav-link.nav-link-expand(href='#')
+                                i.ficon.icon-expand2
+                    ul.nav.navbar-nav.float-xs-right
+                        li.dropdown.dropdown-notification.nav-item
+                            a.nav-link.nav-link-label(href='#', data-toggle='dropdown')
+                                i.ficon.icon-bell4
+                                span.tag.tag-pill.tag-default.tag-danger.tag-default.tag-up 5
+                            ul.dropdown-menu.dropdown-menu-media.dropdown-menu-right
+                                li.dropdown-menu-header
+                                    h6.dropdown-header.m-0
+                                        span.grey.darken-2 Notifications
+                                        span.notification-tag.tag.tag-default.tag-danger.float-xs-right.m-0 5 New
+                                li.list-group.scrollable-container
+                                    a.list-group-item(href='javascript:void(0)')
+                                        .media
+                                            .media-left.valign-middle
+                                                i.icon-cart3.icon-bg-circle.bg-cyan
+                                            .media-body
+                                                h6.media-heading You have new order!
+                                                p.notification-text.font-small-3.text-muted
+                                                    | Lorem ipsum dolor sit
+                                                    | amet,
+                                                    | consectetuer elit.
+                                                small
+                                                    time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00')
+                                                        | 30
+                                                        | minutes ago
+                                    a.list-group-item(href='javascript:void(0)')
+                                        .media
+                                            .media-left.valign-middle
+                                                i.icon-monitor3.icon-bg-circle.bg-red.bg-darken-1
+                                            .media-body
+                                                h6.media-heading.red.darken-1 99% Server load
+                                                p.notification-text.font-small-3.text-muted
+                                                    | Aliquam tincidunt mauris eu
+                                                    | risus.
+                                                small
+                                                    time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00')
+                                                        | Five hour ago
+                                    a.list-group-item(href='javascript:void(0)')
+                                        .media
+                                            .media-left.valign-middle
+                                                i.icon-server2.icon-bg-circle.bg-yellow.bg-darken-3
+                                            .media-body
+                                                h6.media-heading.yellow.darken-3 Warning notifixation
+                                                p.notification-text.font-small-3.text-muted
+                                                    | Vestibulum auctor dapibus
+                                                    | neque.
+                                                small
+                                                    time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00')
+                                                        | Today
+                                    a.list-group-item(href='javascript:void(0)')
+                                        .media
+                                            .media-left.valign-middle
+                                                i.icon-check2.icon-bg-circle.bg-green.bg-accent-3
+                                            .media-body
+                                                h6.media-heading Complete the task
+                                                small
+                                                    time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00')
+                                                        | Last week
+                                    a.list-group-item(href='javascript:void(0)')
+                                        .media
+                                            .media-left.valign-middle
+                                                i.icon-bar-graph-2.icon-bg-circle.bg-teal
+                                            .media-body
+                                                h6.media-heading Generate monthly report
+                                                small
+                                                    time.media-meta.text-muted(datetime='2015-06-11T18:29:20+08:00')
+                                                        | Last month
+                                li.dropdown-menu-footer
+                                    a.dropdown-item.text-muted.text-xs-center(href='javascript:void(0)')
+                                        | Read all
+                                        | notifications
+                        li.dropdown.dropdown-user.nav-item
+                            a.dropdown-toggle.nav-link.dropdown-user-link(href='#', data-toggle='dropdown')
+                                span.avatar.avatar-online
+                                    img(src='../../app-assets/images/portrait/small/avatar-s-1.png', alt='avatar')
+                                    i
+                                span.user-name مالك الفقي
+                            .dropdown-menu.dropdown-menu-right
+                                a.dropdown-item(href='#')
+                                    i.icon-head
+                                    |  Edit
+                                    |                                 Profile
+                                a.dropdown-item(href='#')
+                                    i.icon-clipboard2
+                                    |  Task
+                                .dropdown-divider
+                                a.dropdown-item(href='/')
+                                    i.icon-power3
+                                    |  Logout
+    // ////////////////////////////////////////////////////////////////////////////
+    // main menu
+    .main-menu.menu-fixed.menu-dark.menu-accordion.menu-shadow(data-scroll-to-active='true')
+        // main menu content
+        .main-menu-content
+            ul#main-menu-navigation.navigation.navigation-main(data-menu='menu-navigation')
+                li.nav-item.active
+                    a(href='index')
+                        i.icon-home3
+                        span.menu-title(data-i18n='nav.dash.main') Dashboard
+                hr
+                li.nav-item
+                    a(href='#')
+                        i.icon.icon-group
+                        span.menu-title(data-i18n='nav.page_layouts.main') Customers
+                    ul.menu-content
+                        li
+                            a.menu-item(href='list-cust', data-i18n='nav.page_layouts.1_column')
+                                | All
+                                | Customers
+                                span.icon-list(style='padding-left: 10px')
+                        li
+                            a.menu-item(href='add-cust', data-i18n='nav.page_layouts.2_columns')
+                                | Add
+                                | Customer
+                                span.icon-plus2(style='padding-left: 10px')
+                li.nav-item
+                    a(href='#')
+                        i.icon-grid2
+                        span.menu-title(data-i18n='nav.page_layouts.main') Packages
+                    ul.menu-content
+                        li
+                            a.menu-item(href='list-pack.html', data-i18n='nav.page_layouts.1_column')
+                                | All
+                                | package
+                                span.icon-list(style='padding-left: 10px')
+                        li
+                            a.menu-item(href='add-pack.html', data-i18n='nav.page_layouts.2_columns')
+                                | Add
+                                | package
+                                span.icon-cube2(style='padding-left: 10px')
+                li.nav-item
+                    a(href='#')
+                        i.icon-users2
+                        span.menu-title(data-i18n='nav.page_layouts.main') Users
+                    ul.menu-content
+                        li
+                            a.menu-item(href='list-user.html', data-i18n='nav.page_layouts.1_column')
+                                | All
+                                | Users
+                                span.icon-list(style='padding-left: 10px')
+                        li
+                            a.menu-item(href='add-user.html', data-i18n='nav.page_layouts.2_columns')
+                                | Add
+                                | User
+                                span.icon-user-plus(style='padding-left: 10px')
+                li.nav-item
+                    a(href='logs.html')
+                        i.icon-stats-dots
+                        span.menu-title(data-i18n='nav.dash.main') Logs
+                hr
+                li.disabled.nav-item
+                    a(href='#')
+                        i.icon-gear
+                        span.menu-title(data-i18n='nav.disabled_menu.main') System Settings
+        // /main menu content
+        // main menu footer
+        // include includes/menu-footer
+        // main menu footer
+    block content
+
+    footer.footer.footer-static.footer-light.navbar-border.navbar-fixed-bottom
+        p.clearfix.text-muted.text-sm-center.mb-0.px-2.float-md-right
+            span.float-md-left.d-xs-block.d-md-inline-block
+                | Copyright  © 2018 Made with
+                i.icon-heart5.pink
+                |  in
+                a.text-bold-800.grey.darken-2 &nbsp CODE for Integrated Solutions
+                |  All rights reserved
+    // BEGIN VENDOR JS
+    script(src='../app-assets/js/core/libraries/jquery.min.js', type='text/javascript')
+    script(src='../app-assets/vendors/js/ui/tether.min.js', type='text/javascript')
+    script(src='../app-assets/js/core/libraries/bootstrap.min.js', type='text/javascript')
+    script(src='../app-assets/vendors/js/ui/perfect-scrollbar.jquery.min.js', type='text/javascript')
+    script(src='../app-assets/vendors/js/ui/unison.min.js', type='text/javascript')
+    script(src='../app-assets/vendors/js/ui/blockUI.min.js', type='text/javascript')
+    script(src='../app-assets/vendors/js/ui/jquery.matchHeight-min.js', type='text/javascript')
+    script(src='../app-assets/vendors/js/ui/screenfull.min.js', type='text/javascript')
+    script(src='../app-assets/vendors/js/extensions/pace.min.js', type='text/javascript')
+    // BEGIN VENDOR JS
+    // BEGIN PAGE VENDOR JS
+    // END PAGE VENDOR JS
+    // BEGIN ROBUST JS
+    script(src='../app-assets/js/core/app-menu.js', type='text/javascript')
+    script(src='../app-assets/js/core/app.js', type='text/javascript')
+    // END ROBUST JS
+    // BEGIN PAGE LEVEL JS
+    | >
+    // END PAGE LEVEL JS
