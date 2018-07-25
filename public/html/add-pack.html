@@ -1,0 +1,83 @@
+<div class="app-content content container-fluid">
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <h2 class="content-header-title">Add package</h2>
+        </div>
+        <div class="content-body">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title text-md-center" id="basic-layout-card-center">Package Info</h4>
+                            <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                            <div class="heading-elements">
+                                <ul class="list-inline mb-0">
+                                    <li><a data-action="collapse"><i class="icon-minus4"></i></a></li>
+                                    <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                                    <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+                                    <li><a data-action="close"><i class="icon-cross2"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-body collapse in">
+                            <div class="card-block">
+                                <div class="card-text">
+                                </div>
+                                <form class="form">
+                                    <div class="form-body">
+
+                                        <div class="form-group">
+                                            <label for="eventRegInput1">Package Name</label>
+                                            <input type="text" id="eventRegInput1" class="form-control" placeholder="Package Name" name="fullname">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="eventRegInput2">Package speed</label>
+                                            <p class="text-muted">in Mega bit rate</p>
+                                            <input type="text" id="eventRegInput2" class="form-control" placeholder="i.g. 1024/512 , 2048/1024" name="title">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="eventRegInput3">Expiration date</label>
+                                            <select id="eventRegInput3" name="interested" class="form-control">
+                                                <option value="none" selected="" disabled="">Select date</option>
+                                                <option value="design">30 Days</option>
+                                                <option value="development">60 Days</option>
+                                                <option value="illustration">90 Days</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Status:</label>
+                                            <div class="input-group">
+                                                <label class="display-inline-block custom-control custom-radio ml-1">
+                                                    <input type="radio" name="customer" class="custom-control-input">
+                                                    <span class="custom-control-indicator"></span>
+                                                    <span class="custom-control-description ml-0">Enable</span>
+                                                </label>
+                                                <label class="display-inline-block custom-control custom-radio">
+                                                    <input type="radio" name="customer" checked="" class="custom-control-input">
+                                                    <span class="custom-control-indicator"></span>
+                                                    <span class="custom-control-description ml-0">Disable</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-actions center">
+                                        <button type="button" class="btn btn-warning mr-1">
+                                            <i class="icon-cross2"></i> Cancel
+                                        </button>
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="icon-check2"></i> Save
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
