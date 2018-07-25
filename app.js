@@ -5,8 +5,7 @@ const bodyParser = require('body-parser');
 let User = require('./models/user');
 
 const mongoos = require('mongoose');
-mongoos.connect('mongodb://localhost/test');
-
+mongoos.connect('mongodb://localhost/test'); // MongoDB connection String
 let db = mongoos.connection;
 db.once('open', function () {
     console.log('connected to MongoDB');
@@ -17,65 +16,25 @@ db.on('error', function (err) {
 
 //view engine
 app.set('views', path.join(__dirname, 'views'));
-app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'pug');
 
+//Public Folder
+app.use(express.static(path.join(__dirname, 'public')));
+
+// BodyParser Middleware
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+// LOGIN Page
 app.get('/', function (req, res) {
     res.render('login');
 });
-app.get('/index', function (req, res) {
-    res.render('index');
-});
-app.get('/add-cust', function (req, res) {
-    res.render('add-cust');
-});
-app.get('/list-cust', function (req, res) {
-    res.render('list-cust');
-});
-app.get('/add-user', function (req, res) {
-    res.render('add-user');
-});
-app.get('/add-pack', function (req, res) {
-    res.render('add-pack');
-});
-app.get('/list-pack', function (req, res) {
-    res.render('list-pack');
-});
-app.get('/logs', function (req, res) {
-    res.render('logs');
-});
-/*app.post('/add-user',function (req,res) {
-    const name = req.body.name;
-    const username = req.body.username;
-    const password = req.body.password;
-    let newUser = new User({
-        name:name,
-        username:username,
-        password:password
-    });
-});*/
-app.post('/add-user', (req, res) => {
-    let user = new User();
-    user.name = req.body.name;
-    user.username = req.body.username;
-    user.password = req.body.password;
-    user.password = req.body.password;
-    user.save(function (err) {
-        if(err){
-            console.log(err);
-        } else {
-            res.redirect('/add-user');
-        }
-    });
-    }
-);
-app.get('/list-user', function (req, res) {
-    res.render('list-user');
-});
 
+// Router
+let router = require('./routes/route');
+app.use('/', router);
+
+// Start App
 app.listen(3000, function () {
     console.log('Server Running on port http://localhost:3000 ... ');
 });
