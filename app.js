@@ -24,7 +24,7 @@ app.set('view engine', 'pug');
 //Public Folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// BodyParser Middleware
+// BodyParser Middle-ware
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
