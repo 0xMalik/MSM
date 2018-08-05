@@ -51,15 +51,15 @@
             </div>
             <div class="card-body collapse in">
                 <div class="card-block">
-                    <form class="form-horizontal form-simple" action="index" novalidate>
+                    <form class="form-horizontal form-simple" method="post" action="/" novalidate>
                         <fieldset class="form-group position-relative has-icon-left mb-0">
-                            <input type="text" class="form-control form-control-lg input-lg" id="user-name" placeholder="Your Username" required>
+                            <input name="username" type="text" class="form-control form-control-lg input-lg" id="user-name" placeholder="Your Username" required>
                             <div class="form-control-position">
                                 <i class="icon-head"></i>
                             </div>
                         </fieldset>
                         <fieldset class="form-group position-relative has-icon-left">
-                            <input type="password" class="form-control form-control-lg input-lg" id="user-password" placeholder="Enter Password" required>
+                            <input name="password" type="password" class="form-control form-control-lg input-lg" id="user-password" placeholder="Enter Password" required>
                             <div class="form-control-position">
                                 <i class="icon-key3"></i>
                             </div>

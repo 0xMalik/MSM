@@ -5,10 +5,11 @@ const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
 const flash = require('connect-flash');
 const session = require('express-session');
-let User = require('./models/user');
+const passport = require('passport');
+const config = require('./config/database');
 
 const mongoos = require('mongoose');
-mongoos.connect('mongodb://localhost/test'); // MongoDB connection String
+mongoos.connect(config.database); // MongoDB connection String
 let db = mongoos.connection;
 db.once('open', function () {
     console.log('connected to MongoDB');
@@ -28,10 +29,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-// LOGIN Page
-app.get('/', function (req, res) {
-    res.render('login');
-});
 
 // Express Session Middleware
 app.use(session({
@@ -65,9 +62,29 @@ app.use(expressValidator({
     }
 }));
 
+// Passport Config
+require('./config/passport')(passport);
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Router
 let router = require('./routes/route');
 app.use('/', router);
+
+// LOGIN Page
+app.get('/', function (req, res) {
+    res.render('login');
+});
+
+//Login Process
+app.post('/', function (req, res, next) {
+    passport.authenticate('local', {
+        successRedirect: '/index',
+        failureRedirect: '/',
+        failureFlash: true
+    })(req, res, next);
+});
 
 // Start App
 app.listen(3000, function () {

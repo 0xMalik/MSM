@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const passport = require('passport');
 let User = require('../models/user');
 
 router.get('/index', function (req, res) {
@@ -53,7 +54,6 @@ router.post('/add-user', (req, res) => {
             res.render('add-user', {
                 errors: errors
             });
-            console.log(errors);
         } else {
             let newUser = new User({
                 name: name,
