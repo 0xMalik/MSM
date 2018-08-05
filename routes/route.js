@@ -47,10 +47,13 @@ router.post('/add-user', (req, res) => {
         req.checkBody('password2', 'Password do not match').equals(req.body.password);
 
         let errors = req.validationErrors();
+
+
         if (errors) {
-            res.render('add-user ', {
+            res.render('add-user', {
                 errors: errors
             });
+            console.log(errors);
         } else {
             let newUser = new User({
                 name: name,
@@ -68,7 +71,7 @@ router.post('/add-user', (req, res) => {
                             console.log(err);
                             return;
                         } else {
-                            req.flash('Success','You are Registered');
+                            req.flash('success', 'The user added successfully!');
                             res.redirect('add-user');
                         }
                     })

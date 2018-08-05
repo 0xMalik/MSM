@@ -1,0 +1,5 @@
+.messages
+    each type in Object.keys(messages)
+        each message in messages[type]
+            dev.content
+                dev(dir="ltr" class="alert alert-"+type+" alert-dismissible fade in mb-2 no-border (role='alert')") #{message}

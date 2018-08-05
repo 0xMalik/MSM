@@ -214,8 +214,12 @@ html.loading(lang='en', data-textdirection='rtl', xmlns='http://www.w3.org/1999/
         // main menu footer
         // include includes/menu-footer
         // main menu footer
+    != messages('message',locals)
     block content
-
+    dev.content
+        if errors
+            each error, i in errors
+                dev(class="alert alert-danger alert-dismissible fade in mb-2 no-border") #{error.msg}
     footer.footer.footer-static.footer-light.navbar-border.navbar-fixed-bottom
         p.clearfix.text-muted.text-sm-center.mb-0.px-2.float-md-right
             span.float-md-left.d-xs-block.d-md-inline-block
@@ -242,5 +246,4 @@ html.loading(lang='en', data-textdirection='rtl', xmlns='http://www.w3.org/1999/
     script(src='../app-assets/js/core/app.js', type='text/javascript')
     // END ROBUST JS
     // BEGIN PAGE LEVEL JS
-    | >
     // END PAGE LEVEL JS
